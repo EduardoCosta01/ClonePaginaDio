@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../Button';
-import logo from '../../asserts/download.jpg'
+import logo from '../../asserts/logo-dio.png'
 
 import {
     BuscarInputContainer,
@@ -27,8 +27,8 @@ const Header = () => {
 
                 <Row>
                     <MenuRight href='#'>Home</MenuRight>
-                    <Button title="Entar" variant="secondary"/>
-                    <Button title="Cadastrar" variant="secondary"/>
+                    <Button title="Entar" />
+                    <Button title="Cadastrar" />
                 </Row>
            </HeaderContainer>
         </Wrapper>
