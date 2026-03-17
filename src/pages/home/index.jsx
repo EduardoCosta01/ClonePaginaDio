@@ -7,7 +7,12 @@ import banner from '../../asserts/banner.png'
 import { Container, TextContent, Title, TitleHighlight} from './styles'
 
 const Home = () => {
+    
     const navigate = useNavigate();
+
+    const handleClickSignIn = () => {
+        navigate('/login')
+    }
 
     return ( <>
             <Header />
@@ -30,7 +35,7 @@ const Home = () => {
 
                     </TextContent>
 
-                    <Button title= "Começar Agora" variant="secondary" onclick={() => null}></Button>
+                    <Button title= "Começar Agora" variant="secondary" onClick={handleClickSignIn} type ="button"></Button>
 
                 </div>
 

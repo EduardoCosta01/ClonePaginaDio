@@ -21,6 +21,10 @@ import {
 const Login = () => {
     const navigate = useNavigate();
 
+    const handleClickSignIn = () => {
+        navigate('/feed')
+    }
+
     return ( <>
             <Header />
             <Container>
@@ -47,7 +51,7 @@ const Login = () => {
                             <Input placeholder = "E-mail" type = "email" leftIcon={<MdEmail/>}/>
                             <Input placeholder = "Senha" type = "password" leftIcon={<MdLock/>}/>
 
-                            <Button title="Entrar" variant="secondary" />
+                            <Button title="Entrar" variant="secondary" onClick={handleClickSignIn} type ="button" />
 
                         </form>
 
