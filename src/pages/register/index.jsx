@@ -19,9 +19,15 @@ import {
     TitleLogin,
     Title,
     Wrapper,
+    SubTitleText
 } from './styles'
 
 const schema = yup.object({
+    nome: yup
+        .string()
+        .required('Nome é obrigatório')
+        .min(6, 'Mínimo 6 caracteres'),
+
     email: yup
         .string()
         .required('Email é obrigatório')
@@ -33,17 +39,18 @@ const schema = yup.object({
         .min(6, 'Mínimo 6 caracteres'),
 });
 
-const Login = () => {
+const Register = () => {
     const navigate = useNavigate();
 
-    const handleClickSignRegister = () => {
-        navigate('/register')
+    const handleClickSign = () => {
+        navigate('/login')
     }
 
     const {control, handleSubmit, formState: { errors, isValid, isSubmitting }} = useForm({
         resolver: yupResolver(schema),
         mode: "onChange",
         defaultValues: {
+            nome: '',
             email: '',
             password: '',
         },
@@ -72,22 +79,27 @@ const Login = () => {
 
                     <Wrapper>
 
-                        <TitleLogin> Enter com seu cadastro</TitleLogin>
+                        <TitleLogin> Comece agora grátis</TitleLogin>
 
                         <SubTitleLogin>Faça seu login e make the change._</SubTitleLogin>
 
                         <form onSubmit={handleSubmit(onSubmit)}>
                             
+                        <Input control={control} name="nome" errorMessage={errors?.nome?.message} placeholder="Nome completo" type="text" leftIcon={<MdEmail/>}/>
                             <Input control={control} name="email" errorMessage={errors?.email?.message} placeholder="E-mail" type="email" leftIcon={<MdEmail/>}/>
                             <Input control={control} name="password" errorMessage={errors?.password?.message} placeholder="Senha" type="password" leftIcon={<MdLock/>}/>
 
-                            <Button title="Entrar" variant="secondary" type="submit" disabled={!isValid || isSubmitting} />
+                            <Button title="Criar minha conta" variant="secondary" type="submit" disabled={!isValid || isSubmitting} />
 
                         </form>
 
+                        <SubTitleText>
+                            Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.
+                        </SubTitleText>
+
                         <Row>
-                            <EsqueciText>Esqueci minha senha</EsqueciText>
-                            <CriarText onClick={handleClickSignRegister}>Criar Conta</CriarText>
+                            <EsqueciText onClick={handleClickSign}>já tenho conta</EsqueciText>
+                            <CriarText>Fazer Login</CriarText>
                         </Row>
                         
                     
@@ -103,4 +115,4 @@ const Login = () => {
 
 };
 
-export default Login;
+export default Register;

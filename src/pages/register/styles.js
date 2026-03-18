@@ -66,6 +66,15 @@ export const SubTitleLogin = styled.p`
   line-height: 25px;
 `;
 
+export const SubTitleText = styled.p`
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 25px;
+`;
+
 export const EsqueciText = styled.a`
   font-family: "Open Sans";
   font-style: normal;

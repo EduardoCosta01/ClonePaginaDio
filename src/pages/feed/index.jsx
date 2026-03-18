@@ -1,6 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+/*import { useNavigate } from 'react-router-dom';*/
 
-import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { UserInfo } from '../../components/UserInfo';
 import { Card } from '../../components/Card';
@@ -9,7 +8,7 @@ import { Card } from '../../components/Card';
 import { Container, Column, Title, TitleHighlight} from './styles'
 
 const Feed = () => {
-    const navigate = useNavigate();
+   /* const navigate = useNavigate();*/
 
     return ( <>
             <Header autenticado={true} />
